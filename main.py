@@ -2,10 +2,10 @@ import config
 import json
 import time
 import os
-from flask import Flask, jsonify, Response
-from blueprints.activities import activities
-from microservices.create_data_table import spanner_app
-from microservices.read_services import read_data_from_spanner
+# from flask import Flask, jsonify, Response
+# from blueprints.activities import activities
+# from microservices.create_data_table import spanner_app
+# from microservices.read_services import read_data_from_spanner
 
 # Cloud Spanner configurations
 PROJECT_ID = "asc-ahnat-rthe-sandbox-poc"
