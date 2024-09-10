@@ -4,7 +4,7 @@ import time
 import os
 from flask import Flask, jsonify, Response
 from blueprints.activities import activities
-from microservices.create_data_table import app, create_table
+from microservices.create_data_table import spanner_app
 
 
 # def create_app():
@@ -54,7 +54,7 @@ from microservices.create_data_table import app, create_table
 # app = create_app()
 
 def create_spanner_table():
-    app.create_table()
+    spanner_app.create_table()
 
 
 # read = read_service()
