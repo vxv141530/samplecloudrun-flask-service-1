@@ -5,6 +5,12 @@ import os
 from flask import Flask, jsonify, Response
 from blueprints.activities import activities
 from microservices.create_data_table import spanner_app
+from microservices.read_services import read_data_from_spanner
+
+# Cloud Spanner configurations
+PROJECT_ID = "asc-ahnat-rthe-sandbox-poc"
+INSTANCE_ID = "the-poc2"
+DATABASE_ID = "rthe-poc"
 
 
 # def create_app():
@@ -52,9 +58,13 @@ from microservices.create_data_table import spanner_app
 #     return app
 
 # app = create_app()
-
-def create_spanner_table():
-    spanner_app.create_table()
+#
+# def create_spanner_table():
+#     spanner_app.create_table()
+#
+#
+# def read_spanner_table():
+#     read_data_from_spanner(INSTANCE_ID, DATABASE_ID, "sample_table")
 
 
 # read = read_service()
@@ -62,5 +72,5 @@ def create_spanner_table():
 if __name__ == "__main__":
     print("Starting creating spanner database table...")
     # app.run(host="0.0.0.0", port=5000)
-    create_spanner_table()
-    # read_service()
+    # create_spanner_table()
+    # read_spanner_table()
