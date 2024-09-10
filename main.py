@@ -62,5 +62,5 @@ def create_spanner_table():
 if __name__ == "__main__":
     print("Starting spanner app...")
     # app.run(host="0.0.0.0", port=5000)
-    # create_spanner_table()
+    create_spanner_table()
     # read_service()
