@@ -1,3 +1,5 @@
+import os
+
 import config
 import json
 import time
@@ -73,4 +75,4 @@ services = create_services()
 
 if __name__ == "__main__":
     print("Starting creating spanner database table...")
-    services.run(debug=True)
+    services.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
