@@ -28,11 +28,11 @@ def create_table():
             ) STORED
         ) PRIMARY KEY (EncounterId)""",
             """CREATE TABLE Coverage (
-            PartyId INT64 NOT NULL,
             EncounterId INT64 NOT NULL,
             PersonId INT64 NOT NULL, 
+            PartyId INT64 NOT NULL,
             CONSTRAINT FK_encounter FOREIGN KEY (EncounterId) REFERENCES Encounter(EncounterId)
-        ) PRIMARY KEY (EncounterId, PartyId) """
+        ) PRIMARY KEY (EncounterId) """
         ],
     )
     operation = database_admin_api.create_database(request=request)
