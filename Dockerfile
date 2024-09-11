@@ -13,4 +13,4 @@ COPY . ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 ENTRYPOINT ["gunicorn"]
-CMD [ "--bind:$PORT","--workers 1", "--threads 8" ,"--timeout 0", "main:app"]
+CMD [ "--bind:$PORT","--workers 1", "--threads 8" ,"--timeout 0", "main:services"]
