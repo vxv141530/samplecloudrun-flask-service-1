@@ -18,12 +18,12 @@ def create_table():
         create_statement=f"CREATE DATABASE `{DATABASE_ID}`",
         extra_statements=[
             """CREATE TABLE Encounter (
-            EncounterId     INT64 NOT NULL,
+            EncounterId  INT64 NOT NULL,
             PersonId INT64 NOT NULL, 
-            FirstName    STRING(1024),
-            LastName     STRING(1024),
-            PersonInfo   BYTES(MAX),
-            FullName   STRING(2048) AS (
+            FirstName  STRING(1024),
+            LastName  STRING(1024),
+            PersonInfo  BYTES(MAX),
+            FullName  STRING(2048) AS (
                 ARRAY_TO_STRING([FirstName, LastName], " ")
             ) STORED
         ) PRIMARY KEY (EncounterId)""",
