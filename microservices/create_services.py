@@ -19,6 +19,7 @@ def create_table():
         extra_statements=[
             """CREATE TABLE Encounter (
             EncounterId     INT64 NOT NULL,
+            PersonId INT64 NOT NULL, 
             FirstName    STRING(1024),
             LastName     STRING(1024),
             PersonInfo   BYTES(MAX),
