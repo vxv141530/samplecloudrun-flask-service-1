@@ -4,10 +4,10 @@ from google.cloud.spanner_admin_database_v1.types import \
 
 PROJECT_ID = "asc-ahnat-rthe-sandbox-poc"
 INSTANCE_ID = "the-poc1"
-DATABASE_ID = "rthe-poc2"
+DATABASE_ID = "rthe-poc1"
 
 
-def create_table():
+def create_database_table():
     spanner_client = spanner.Client(project=PROJECT_ID)
 
     instance = spanner_client.instance(INSTANCE_ID)
@@ -40,3 +40,45 @@ def create_table():
     print("Waiting for operation to complete...")
     database = operation.result()
     print(database)
+
+
+def create_table(instance_id, database_id):
+    # Create a Spanner client
+    spanner_client = spanner.Client()
+
+    # Create an instance object
+    instance = spanner_client.instance(INSTANCE_ID)
+
+    # Create a database object
+    database = instance.database(DATABASE_ID)
+
+    # Define the DDL statement to create the table
+    ddl_statement = """
+    CREATE TABLE Person (
+        UserId INT64 NOT NULL,
+        FirstName STRING(1024),
+        LastName STRING(1024),
+        Email STRING(1024),
+        Age INT64,
+        PRIMARY KEY (PersonId)
+    )
+    """
+
+    # Execute the DDL statement to create the table
+    operation = database.update_ddl([ddl_statement])
+
+    # Wait for the operation to complete
+    print("Waiting for operation to complete...")
+    operation.result()
+
+    print("Table created successfully.")
+
+
+if __name__ == "__main__":
+    # Cloud Spanner configurations
+    INSTANCE_ID = "the-poc1"
+    DATABASE_ID = "rthe-poc1"
+    # TABLE_NAME = "Encounter"
+    # create_database_table()
+    create_table(INSTANCE_ID, DATABASE_ID)  # person table
+    # read_data_from_spanner(INSTANCE_ID, DATABASE_ID, TABLE_NAME)

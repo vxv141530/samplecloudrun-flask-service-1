@@ -24,6 +24,6 @@ def read_data_from_spanner(instance_id, database_id, table_name):
 if __name__ == "__main__":
     # Cloud Spanner configurations
     INSTANCE_ID = "the-poc1"
-    DATABASE_ID = "rthe-poc2"
+    DATABASE_ID = "rthe-poc1"
     TABLE_NAME = "Encounter"
     read_data_from_spanner(INSTANCE_ID, DATABASE_ID, TABLE_NAME)
