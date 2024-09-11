@@ -31,4 +31,4 @@ def insert_encounter(encounter_id, first_name, last_name, person_info):
 
 
 # Insert a record into the 'Encounter' table
-insert_encounter(1, 'John', 'Doe', 'Person Info: Details about John')
+insert_encounter(345, 'Charles', 'Doe', 'Person Info: Details about Charles Doe')
