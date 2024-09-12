@@ -5,7 +5,7 @@ from google.cloud import spanner
 from concurrent.futures import TimeoutError
 
 
-class SpannerPubSubListener:
+class PubSubToSpannerService:
     def __init__(self, project_id, subscription_id, instance_id, database_id, table_name, timeout=60.0):
         # Cloud Pub/Sub configurations
         self.project_id = project_id
