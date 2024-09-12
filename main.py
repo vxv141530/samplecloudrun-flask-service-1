@@ -23,6 +23,7 @@ if __name__ == "__main__":
     # Start listening for Pub/Sub messages
     listener.listen_for_messages()
 
+
     # Create an instance of the SpannerPubSubService
     service = SpannerToPubSubService(PROJECT_ID, INSTANCE_ID, DATABASE_ID, TOPIC_OUTBOUND_ID, TABLE_NAME)
 
