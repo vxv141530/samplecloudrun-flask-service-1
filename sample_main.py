@@ -117,5 +117,5 @@ service_read = create_read_service()
 
 if __name__ == "__main__":
     print("Starting reading spanner database tables...")
-    # services = create_read_service()
-    # service_read.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+    services = create_read_service()
+    service_read.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
